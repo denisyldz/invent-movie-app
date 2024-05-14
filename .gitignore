@@ -22,4 +22,5 @@ yarn-debug.log*
 yarn-error.log*
 
 # custom files
-/constants/key.js
+/constants
+.key.js
