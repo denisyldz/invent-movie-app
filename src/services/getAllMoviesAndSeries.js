@@ -1,4 +1,4 @@
-import { API_KEY } from '../constants/key';
+import { apiKey } from '../constants/key';
 
 export const getMoviesAndSeries = async (searchText, searchType) => {
     let allData = [];
@@ -6,7 +6,7 @@ export const getMoviesAndSeries = async (searchText, searchType) => {
 
     try {
         for (let page = 1; page <= totalPages; page++) {
-            const url = `http://www.omdbapi.com/?s=${searchText}&type=${searchType}&page=${page}&apikey=${API_KEY}`;
+            const url = `http://www.omdbapi.com/?s=${searchText}&type=${searchType}&page=${page}&apikey=${apiKey}`;
             const response = await fetch(url);
 
             if (!response.ok) {
@@ -27,7 +27,7 @@ export const getMoviesAndSeries = async (searchText, searchType) => {
 
 export const getByTitle = async (title) => {
     try {
-        const url = `http://www.omdbapi.com/?t=${title}&apikey=${API_KEY}`;
+        const url = `http://www.omdbapi.com/?t=${title}&apikey=${apiKey}`;
         const response = await fetch(url);
 
         if (!response.ok) {
